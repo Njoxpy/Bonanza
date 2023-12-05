@@ -1,46 +1,46 @@
 const prompt = require("prompt-sync")();
 
 const deposit = () => {
-    // while tunatumia kulloop katika function yetu kama atakuwa anakosea hiyo kiwango kila muda tutakuwa tunamuuliza hadi pale atakapoweza
     while (true) {
-        // mruhusu mtumiaji aweze kuingiza pesa(deposit)
         const kiwangoChaKuweka = prompt("Weka kiasi unachotaka kuweka: ");
-
-        // badili kiwango kuwa katika float
         const nambaIliyoKatikaFloat = parseFloat(kiwangoChaKuweka);
 
-        // angalia kama namba hiyo ni maneno ya ni chini ya sifuri(0)
         if (isNaN(nambaIliyoKatikaFloat) || nambaIliyoKatikaFloat <= 0) {
             console.log('Kiasi ulichoweka sio sahihi!');
-        }
-        else {
+        } else {
             return nambaIliyoKatikaFloat;
         }
     }
 };
 
-/* Tambua kiasi cha miswali ambayo user anataka kutumia */
 const numberOfLines = () => {
-
     while (true) {
-        // mruhusu mtumiaji aweze kuingiza pesa(deposit)
-        const lines = prompt("Ingiza idadi ya mistari unayotaka kubetia kuanzia ya (1-3): ");
+        const lines = prompt("Ingiza idadi ya mistari unayotaka kubetia kuanzia 1 hadi 3: ");
+        const linesAmbazoZikoKatikaFloat = parseFloat(lines);
 
-        // badili kiwango kuwa katika float
-        const linesAmbazoZikoKatikaFloat = parseFloat(Math.floor(lines));
-
-        // angalia kama namba hiyo ni maneno ya ni chini ya sifuri(0)
         if (isNaN(linesAmbazoZikoKatikaFloat) || linesAmbazoZikoKatikaFloat <= 0 || linesAmbazoZikoKatikaFloat > 3) {
             console.log('Idadi ya mistari sio sahihi!');
-        }
-        else {
+        } else {
             return linesAmbazoZikoKatikaFloat;
         }
     }
-}
+};
 
-/* Kwanini nikitumia,nikijaza idadi ya mistari ambayo ipo katika decimal kati ya 1-3 bado inaleta majibu */
-const kiwangoChaKuweka = deposit();
+const getBet = (kiasiKilichopo, linesAmbazoZikoKatikaFloat) => {
+    while (true) {
+        const bet = prompt("Ingiza idadi ya bet unazotaka kuweka: ");
+        const numberBet = parseFloat(bet);
+
+        if (isNaN(numberBet) || numberBet <= 0 || numberBet > kiasiKilichopo / linesAmbazoZikoKatikaFloat) {
+            console.log('Bet sio sahihi!');
+        } else {
+            return numberBet;
+        }
+    }
+};
+
+let kiasiKilichopo = deposit();
 const linesAmbazoZikoKatikaFloat = numberOfLines();
+const newBet = getBet(kiasiKilichopo, linesAmbazoZikoKatikaFloat);
 
 // 2. Determine the number of lines they want to bet on
