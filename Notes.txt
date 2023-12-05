@@ -1,0 +1,3 @@
+For a user to text our project he or she needs to have node installed
+
+1. Make sure to tell a suer that node.js is installed in the Folder.
