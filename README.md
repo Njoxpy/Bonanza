@@ -28,4 +28,4 @@ Getting started with Bonanza is a breeze! Follow these simple steps:
 
 
 ## To get a full understanding of how the code works  including the flowchart demo video visit here
- [Medium](https://medium.com/@godblessnyagawa/bonanza-project-using-javascript-bf4fa8075db1).
+ [Medium](https://medium.com/@godblessnyagawa/bonanza-project-using-javascript-bf4fa8075db1)
