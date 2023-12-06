@@ -1,5 +1,22 @@
 const prompt = require("prompt-sync")();
 
+const ROWS = 3;
+const COLUMNS = 3;
+
+const SYMBOLS_COUNT = {
+    A: 2,
+    B: 4,
+    C: 6,
+    D: 8
+};
+
+const SYMBOLS_VALUES = {
+    A: 5,
+    B: 4,
+    C: 3,
+    D: 2
+};
+
 const deposit = () => {
     while (true) {
         const kiwangoChaKuweka = prompt("Weka kiasi unachotaka kuweka: ");
@@ -39,8 +56,16 @@ const getBet = (kiasiKilichopo, linesAmbazoZikoKatikaFloat) => {
     }
 };
 
+const spin = () => {
+    const symbols = [];
+    for (const [symbols, count] of Object.entries(SYMBOLS_COUNT)) {
+        console.log(symbols, count);
+    }
+}
+
 let kiasiKilichopo = deposit();
 const linesAmbazoZikoKatikaFloat = numberOfLines();
 const newBet = getBet(kiasiKilichopo, linesAmbazoZikoKatikaFloat);
+spin();
 
 // 2. Determine the number of lines they want to bet on
